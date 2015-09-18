@@ -1,5 +1,5 @@
 p, h1, h2, .main, .btn, .btn-active, .my-menu {
-    margin: 3% 3% 3% 3%;
+    margin: 3vh 3vh 3vh 3vh;
 }
 
 /*.btn{
@@ -10,41 +10,31 @@ p, h1, h2, .main, .btn, .btn-active, .my-menu {
     color: red;
     position: absolute;
     top: 0;
-    width: 40vw;
-    height: 100vh;
+    width: 37vw;
+    height: 94vh;
     background-color: #cccccc;
 }
 .main{
     background-color: #080808;
 }
 
-.from-left.ng-enter{
-    transition:0.5s linear all;
+.from-left.ng-enter, .from-left.ng-leave.ng-leave-active{
+    transition: 0.5s linear all;
     transform: translateX(-40vw);
 }
-.from-left.ng-enter.ng-enter-active{
-    transition:0.5s linear all;
+.from-left.ng-enter.ng-enter-active, .from-left.ng-leave{
+    transition: 0.5s linear all;
     transform: translateX(0vw);
-}
-
-.from-left.ng-leave{
-    transition:0.5s linear all;
-    transform: translateX(0vw);
-}
-
-.from-left.ng-leave.ng-leave-active{
-    transition:0.5s linear all;
-    transform: translateX(-40vw);
 }
 
 
 
 .stay-right{
     transform: translateX(40vw);
-    transition:0.5s linear all;
+    transition: 0.5s linear all;
 }
 .stay-left {
-    transition:0.5s linear all;
+    transition: 0.5s linear all;
     transform: translateX(0vw);
 }
 
