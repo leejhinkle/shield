@@ -11,7 +11,7 @@ body{
     background-color: #ebebeb;
 }
 
-p, h1, h2, .btn, .btn-active, .my-menu{
+p, h1, h2, .btn, .btn-active, .my-menu, .jumbotron{
     margin: 3vh 3vh 3vh 3vh;
 }
 
@@ -38,12 +38,14 @@ hr{
     height: 94vh;
     background-color: #cccccc;
 }
-#black{
-    background-color: #080808;
+
+.jumbotron{
+    background-color: royalblue;
+    border-radius: 1vh;
 }
-#site-title{
-    text-align: center;
-    text-shadow: 3px 3px 5px #888888;
+
+.jumbotron>p{
+    margin: 3vh 3vh 3vh 3vh;
 }
 
 .from-left.ng-enter, .from-left.ng-leave.ng-leave-active{
@@ -55,8 +57,6 @@ hr{
     transform: translateX(0vw);
 }
 
-
-
 .stay-right{
     transform: translateX(40vw);
     transition: 0.5s linear all;
@@ -66,38 +66,10 @@ hr{
     transform: translateX(0vw);
 }
 
-/*
-
-/!* The starting CSS styles for the enter animation *!/
-.fade.ng-enter {
-    transition:0.5s linear all;
-    opacity:0;
-    transform:translateY(-100px);
+#black{
+    background-color: #080808;
 }
-
-/!* The finishing CSS styles for the enter animation *!/
-.fade.ng-enter.ng-enter-active {
-    opacity:1;
-    transform:translateY(0);
+#site-title{
+    text-align: center;
+    text-shadow: 3px 3px 5px #888888;
 }
-
-.highlight {
-    transition:0.5s linear all;
-}
-.highlight.on-add {
-    background:white;
-}
-.highlight.on {
-    background:yellow;
-}
-.highlight.on-remove {
-    background:black;
-}
-
-.slide.ng-enter {
-    transition:0.5s linear all;
-    transform:translateY(-100px);
-}
-.slide.ng-enter.ng-enter-active {
-    transform:translateY(0);
-}*/

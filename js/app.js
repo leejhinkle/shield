@@ -3,6 +3,6 @@
  */
 
 
-var app = angular.module('shieldApp', ['ngRoute', 'ngAnimate']);
+var app = angular.module('shieldApp', ['ngRoute', 'ngAnimate', 'simpleAngularTicker']);
 
 //app.config();

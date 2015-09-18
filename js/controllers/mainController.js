@@ -24,6 +24,21 @@ app.controller('mainController', ['$scope', function($scope){
         }*/
 
     };
+
+    $scope.myTickerItems = [
+        {
+            title: 'item 1',
+            copy: 'amazing copy here'
+        },
+        {
+            title: 'item 2',
+            copy: 'wow, this is great'
+        },
+        {
+            title: 'item 3',
+            copy: 'hello angular'
+        }
+    ]
 }]);
 /*
 app.animation('.colorful', [function() {

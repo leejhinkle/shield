@@ -9,11 +9,15 @@
 
     <script src="js/app.js"></script>
     <script src="js/controllers/mainController.js"></script>
+    <!--Angular ticker-->
+    <script src="bower_components/angular-ticker/release/ticker.js"></script>
 
 
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
     <link href="css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />
     <link href="css/styles.css" type="text/css" rel="stylesheet" />
+    <!--Ticker CSS-->
+    <link rel="stylesheet" href="bower_components/angular-ticker/release/ticker.css">
 
 </head>
 <body ng-controller="mainController">
@@ -25,7 +29,18 @@
             <button class="btn btn-active" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span> </button>
 
         </div>
-        <div class="jumbotron">Lots of fun things here</div>
+        <div class="jumbotron">
+            <p>Lots of fun things here</p>
+        </div>
+        <!--Angular ticker-->
+        <!--
+            TODO: Make this a horizontal ticker.
+        -->
+        <ul ticker timing="250">
+            <li ng-repeat="item in myTickerItems" class="item-{{$index}}">
+                {{item.title}} - {{item.copy}}
+            </li>
+        </ul>
         <footer class="panel-footer">
             <div class="container">
                 Sticky bottom news ticker
@@ -46,6 +61,7 @@
             <li class="list-group-item">Coaches</li>
         </ul>
     </div>
+
 
 </body>
 </html>
