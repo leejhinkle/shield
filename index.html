@@ -18,9 +18,13 @@
 </head>
 <body ng-controller="mainController">
 
-    <div id='main' class="main stay-left">
-        <button class="btn btn-active" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span> </button>
-        {{ fadeMe }}
+
+    <div id="main" class="stay-left">
+        <h1>SHIELD VOLLEYBALL CLUB</h1>
+        <div id='black' >
+            <button class="btn btn-active" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span> </button>
+            {{ fadeMe }}
+        </div>
     </div>
 
     <div ng-if="fadeMe" class="my-menu from-left">

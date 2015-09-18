@@ -1,20 +1,36 @@
-p, h1, h2, .main, .btn, .btn-active, .my-menu {
+@font-face {
+    font-family: ethnocentric;
+    src: url('/fonts/ethnocentric.ttf');
+}
+
+body{
+    background-color: #ebebeb;
+}
+
+p, h1, h2, .btn, .btn-active, .my-menu {
     margin: 3vh 3vh 3vh 3vh;
 }
 
+h1{
+    font-family: ethnocentric;
+    color: royalblue;
+}
 /*.btn{
     margin: 3% 3% 3% 3%;
 }*/
 
+
+
 .my-menu{
-    color: red;
+    color: royalblue;
+    font-size: 5vh;
     position: absolute;
     top: 0;
     width: 37vw;
     height: 94vh;
     background-color: #cccccc;
 }
-.main{
+#black{
     background-color: #080808;
 }
 
