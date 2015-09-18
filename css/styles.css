@@ -1,34 +1,52 @@
-body, p, h1, h2, .btn .btn-active{
+p, h1, h2, .main, .btn, .btn-active, .my-menu {
     margin: 3% 3% 3% 3%;
 }
 
-.btn{
+/*.btn{
     margin: 3% 3% 3% 3%;
-}
+}*/
 
 .my-menu{
     color: red;
+    position: absolute;
+    top: 0;
+    width: 40vw;
+    height: 100vh;
+    background-color: #cccccc;
+}
+.main{
+    background-color: #080808;
 }
 
 .from-left.ng-enter{
     transition:0.5s linear all;
-    transform: translateX(-100px);
+    transform: translateX(-40vw);
 }
 .from-left.ng-enter.ng-enter-active{
     transition:0.5s linear all;
-    transform: translateX(0px);
+    transform: translateX(0vw);
 }
 
 .from-left.ng-leave{
     transition:0.5s linear all;
-    transform: translateX(0px);
+    transform: translateX(0vw);
 }
 
 .from-left.ng-leave.ng-leave-active{
     transition:0.5s linear all;
-    transform: translateX(-100px);
+    transform: translateX(-40vw);
 }
 
+
+
+.stay-right{
+    transform: translateX(40vw);
+    transition:0.5s linear all;
+}
+.stay-left {
+    transition:0.5s linear all;
+    transform: translateX(0vw);
+}
 
 /*
 

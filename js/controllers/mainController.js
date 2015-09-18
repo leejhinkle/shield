@@ -3,12 +3,26 @@
  */
 app.controller('mainController', ['$scope', function($scope){
     $scope.fadeMe = false;
+    $scope.pushMe = true;
+    $scope.showMe = false;
 
     /*$scope.toggle = function(){
         $scope.fadeMe = !$scope.fadeMe;
     };*/
     $scope.toggleMenu = function(){
         $scope.fadeMe = !$scope.fadeMe;
+        $scope.pushMe = !$scope.pushMe;
+        $scope.showMe = !$scope.showMe;
+        angular.element( document.querySelector( '#main' )).toggleClass('stay-right');
+        angular.element( document.querySelector( '#main' )).toggleClass('stay-left');
+        /*if ($scope.showMe){
+            angular.element( document.querySelector( '.main' )).toggleClass('stay-right');
+
+        }
+        else{
+            $scope.element('main').removeClass('stay-right');
+        }*/
+
     };
 }]);
 /*

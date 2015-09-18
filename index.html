@@ -16,12 +16,13 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet" />
 
 </head>
-<body class="main" ng-controller="mainController">
+<body ng-controller="mainController">
 
-    <div>
-        <button class="btn btn-active" ng-click="toggleMenu()"><i class="glyphicon-menu-left"></i> </button>
+    <div id='main' class="main stay-left">
+        <button class="btn btn-active" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span> </button>
         {{ fadeMe }}
     </div>
+
     <div ng-if="fadeMe" class="my-menu from-left">
         <ul>
             <li>Thing</li>
