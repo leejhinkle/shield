@@ -3,6 +3,6 @@
  */
 
 
-var app = angular.module('shieldApp', ['pageslide-directive']);
+var app = angular.module('shieldApp', ['ngRoute', 'ngAnimate']);
 
 //app.config();

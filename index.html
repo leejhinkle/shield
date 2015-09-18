@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>SHIELD VOLLEYBALL</title>
-    <script src="https://code.angularjs.org/1.4.6/angular.min.js"></script>
-    <script src="https://code.angularjs.org/1.4.6/angular-route.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/controllers/mainController.js"></script>
@@ -16,12 +16,36 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet" />
 
 </head>
-<body >
+<body class="main" ng-controller="mainController">
 
     <div class="jumbotron">
         <h1>Title here</h1>
-            <button class="btn btn-danger" >My button</button>
+        <button class="btn btn-danger" >My button</button>
+
+        <div ng-if="bool" class="fade">
+            Fade me in out
+        </div>
+        <button ng-click="bool=true">Fade In!</button>
+        <button ng-click="bool=false">Fade Out!</button>
+
+        {{ bool }}
+
+
+        <div ng-if="fadeMe" class="fade">
+            Fade me in out
+        </div>
+        <button class="btn btn-danger" ng-click="toggle()">Fade Toggle</button>
+        {{ fadeMe }}
+
     </div>
+
+    <div ng-show="bool" class="fade">
+        Show and hide me
+    </div>
+    <button ng-click="bool=true">Toggle</button>
+
+
+
 
 
 </body>
