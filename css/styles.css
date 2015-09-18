@@ -14,15 +14,16 @@ p, h1, h2, .btn, .btn-active, .my-menu {
 h1{
     font-family: ethnocentric;
     color: royalblue;
+    font-size: 7vh;
 }
-/*.btn{
-    margin: 3% 3% 3% 3%;
-}*/
+
 
 
 
 .my-menu{
     color: royalblue;
+    font-family: ethnocentric;
+    text-shadow:  3px 3px 5px #888888;;
     font-size: 5vh;
     position: absolute;
     top: 0;
@@ -32,6 +33,10 @@ h1{
 }
 #black{
     background-color: #080808;
+}
+#site-title{
+    text-align: center;
+    text-shadow: 3px 3px 5px #888888;
 }
 
 .from-left.ng-enter, .from-left.ng-leave.ng-leave-active{
