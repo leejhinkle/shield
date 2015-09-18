@@ -36,14 +36,14 @@
         <!--
             TODO: Make this a horizontal ticker.
         -->
-        <ul ticker timing="250">
-            <li ng-repeat="item in myTickerItems" class="item-{{$index}}">
-                {{item.title}} - {{item.copy}}
-            </li>
-        </ul>
+
         <footer class="panel-footer">
             <div class="container">
-                Sticky bottom news ticker
+                <ul ticker timing="7000" class="list-group">
+                    <li ng-repeat="item in myTickerItems" class="item-{{$index}} list-group-item">
+                        {{item.title}} - {{item.copy}}
+                    </li>
+                </ul>
             </div>
         </footer>
     </div>

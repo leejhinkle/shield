@@ -5,7 +5,7 @@
 /* line 7, ../app/styles/angular-ticker.scss */
 [ticker].active {
   display: block;
-  height: 195px;
+  height: 15vh;
   overflow-y: hidden;
 }
 /* line 13, ../app/styles/angular-ticker.scss */
