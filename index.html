@@ -25,12 +25,25 @@
             <button class="btn btn-active" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span> </button>
             {{ fadeMe }}
         </div>
+        <div class="jumbotron">Lots of fun things here</div>
+        <footer class="panel-footer">
+            <div class="container">
+                Sticky bottom news ticker
+            </div>
+        </footer>
     </div>
 
     <div ng-if="fadeMe" class="my-menu from-left">
-        <ul>
-            <li>Thing</li>
-            <li>Thing 2</li>
+        <br/>
+        <ul class="list-group">
+            <li class="list-group-item">User's Name</li>
+            <li class="list-group-item">Log in / out</li>
+            <hr/>
+            <li class="list-group-item">Home</li>
+            <li class="list-group-item">Practice</li>
+            <li class="list-group-item">Season</li>
+            <li class="list-group-item">Tryouts</li>
+            <li class="list-group-item">Coaches</li>
         </ul>
     </div>
    <!-- <div class="jumbotron">

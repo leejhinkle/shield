@@ -3,11 +3,15 @@
     src: url('/fonts/ethnocentric.ttf');
 }
 
+html, body{
+    height: 100vh;
+}
+
 body{
     background-color: #ebebeb;
 }
 
-p, h1, h2, .btn, .btn-active, .my-menu {
+p, h1, h2, .btn, .btn-active, .my-menu{
     margin: 3vh 3vh 3vh 3vh;
 }
 
@@ -17,7 +21,10 @@ h1{
     font-size: 7vh;
 }
 
-
+hr{
+    margin-left: 3vh;
+    margin-right: 3vh;
+}
 
 
 .my-menu{
