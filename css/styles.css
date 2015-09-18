@@ -6,13 +6,62 @@ body, p, h1, h2, .btn .btn-active{
     margin: 3% 3% 3% 3%;
 }
 
-/* The starting CSS styles for the enter animation */
+.my-menu{
+    color: red;
+}
+
+.from-left.ng-enter{
+    transition:0.5s linear all;
+    transform: translateX(-100px);
+}
+.from-left.ng-enter.ng-enter-active{
+    transition:0.5s linear all;
+    transform: translateX(0px);
+}
+
+.from-left.ng-leave{
+    transition:0.5s linear all;
+    transform: translateX(0px);
+}
+
+.from-left.ng-leave.ng-leave-active{
+    transition:0.5s linear all;
+    transform: translateX(-100px);
+}
+
+
+/*
+
+/!* The starting CSS styles for the enter animation *!/
 .fade.ng-enter {
     transition:0.5s linear all;
     opacity:0;
+    transform:translateY(-100px);
 }
 
-/* The finishing CSS styles for the enter animation */
+/!* The finishing CSS styles for the enter animation *!/
 .fade.ng-enter.ng-enter-active {
     opacity:1;
+    transform:translateY(0);
 }
+
+.highlight {
+    transition:0.5s linear all;
+}
+.highlight.on-add {
+    background:white;
+}
+.highlight.on {
+    background:yellow;
+}
+.highlight.on-remove {
+    background:black;
+}
+
+.slide.ng-enter {
+    transition:0.5s linear all;
+    transform:translateY(-100px);
+}
+.slide.ng-enter.ng-enter-active {
+    transform:translateY(0);
+}*/

@@ -18,7 +18,17 @@
 </head>
 <body class="main" ng-controller="mainController">
 
-    <div class="jumbotron">
+    <div>
+        <button class="btn btn-active" ng-click="toggleMenu()"><i class="glyphicon-menu-left"></i> </button>
+        {{ fadeMe }}
+    </div>
+    <div ng-if="fadeMe" class="my-menu from-left">
+        <ul>
+            <li>Thing</li>
+            <li>Thing 2</li>
+        </ul>
+    </div>
+   <!-- <div class="jumbotron">
         <h1>Title here</h1>
         <button class="btn btn-danger" >My button</button>
 
@@ -44,7 +54,22 @@
     </div>
     <button ng-click="bool=true">Toggle</button>
 
+    <div ng-class="{on:onOff}" class="highlight">
+        Highlight this box
+    </div>
+    <button ng-click="onOff=!onOff">Toggle</button>
 
+    <div ng-class="color" class="colorful">
+        this box is moody
+    </div>
+    <button ng-click="color='red'">Change to red</button>
+    <button ng-click="color='blue'">Change to blue</button>
+    <button ng-click="color='green'">Change to green</button>
+
+
+    <div ng-if="bool" class="slide">
+        Slide in and out
+    </div>-->
 
 
 
