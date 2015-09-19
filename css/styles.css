@@ -11,7 +11,7 @@ body{
     background-color: #ebebeb;
 }
 
-p, h1, h2, .btn, .btn-active, .my-menu, .jumbotron{
+p, h1, h2, .btn, .btn-active, .my-menu, .my-row {
     margin: 3vh 3vh 3vh 3vh;
 }
 
@@ -26,6 +26,15 @@ hr{
     margin-right: 3vh;
 }
 
+img{
+    margin: 0 auto;
+    width: 97vw;
+
+}
+
+#rectangular {
+    border-radius: 1vh;
+}
 
 .my-menu{
     color: royalblue;
@@ -39,9 +48,16 @@ hr{
     background-color: #cccccc;
 }
 
+.my-row{
+    text-align: center;
+}
+
 .jumbotron{
     background-color: royalblue;
     border-radius: 1vh;
+    display: inline-block;
+    margin: 1vh 3vh 1vh 3vh;
+    padding: 0vh 0vh 0vh 0vh;
 }
 
 .jumbotron>p{
@@ -68,6 +84,9 @@ hr{
 
 #black{
     background-color: #080808;
+    margin: 0vh 3vh 0vh 3vh;
+    padding: 3vh 3vh 3vh 3vh;
+    border-radius: 1vh;
 }
 #site-title{
     text-align: center;
