@@ -35,6 +35,11 @@ app.config(function($routeProvider){
             controller: 'mainController',
             templateUrl: 'js/views/coaches.html'
         })
+        .when('/create-user',{
+            controller: 'mainController',
+            templateUrl: 'js/views/create-user.html'
+
+        })
         .otherwise({
             redirectTo: '/'
         });

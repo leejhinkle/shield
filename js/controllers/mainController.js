@@ -6,7 +6,9 @@ app.controller('mainController', ['$scope', function($scope){
     $scope.pushMe = true;
     $scope.showMe = false;
     $scope.login = false;
-    $scope.loginText = "Login"
+    $scope.loginText = "Login";
+    $scope.username = '';
+    $scope.password = '';
 
     /*$scope.toggle = function(){
         $scope.fadeMe = !$scope.fadeMe;
@@ -25,6 +27,13 @@ app.controller('mainController', ['$scope', function($scope){
             $scope.element('main').removeClass('stay-right');
         }*/
 
+    };
+
+    $scope.loginUser = function(){
+        //$scope.username
+        //find username/email in database
+        //if not there, return "unknown user/pw combo
+        //
     };
 
     $scope.myTickerItems = [
