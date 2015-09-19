@@ -9,11 +9,34 @@ app.controller('mainController', ['$scope', function($scope){
     $scope.loginText = "Login";
     $scope.username = '';
     $scope.password = '';
+    //Probably not the safest place to put this
+    /*****/
     $scope.firebaseConnection = new Firebase('https://shield-db.firebaseio.com/');
+    var usersRef = $scope.firebaseConnection.child('users');
+    var users = null;
 
-    /*$scope.toggle = function(){
-        $scope.fadeMe = !$scope.fadeMe;
-    };*/
+    usersRef.on('value', function(snapshot){
+        users = snapshot.val();
+        console.log(users);
+    }, function (errorObject) {
+        console.log("There was an error: " + errorObject);
+    });
+
+    var saltRef = $scope.firebaseConnection.child('salt');
+    console.log(saltRef);
+    var salt = null;
+    saltRef.on('value', function(snapshot){
+        salt = snapshot.val();
+        console.log(salt);
+        //rewrite salt as the value of the child of the salt object
+        salt = salt.salt;
+        console.log(salt);
+    }, function (errorObject) {
+        console.log("There was an error: " + errorObject);
+    });
+    /*****/
+
+    //Menu toggle function
     $scope.toggleMenu = function(){
         $scope.fadeMe = !$scope.fadeMe;
         $scope.pushMe = !$scope.pushMe;
@@ -30,32 +53,48 @@ app.controller('mainController', ['$scope', function($scope){
 
     };
 
+
+    //Loginuser function
     $scope.loginUser = function(){
-        var usersRef = $scope.firebaseConnection.child('users');
-        var users = null;
 
-        usersRef.on('value', function(snapshot){
-            users = snapshot.val();
-            console.log(users);
-        }, function (errorObject) {
-            console.log("There was an error: " + errorObject);
-        });
+        var match = false;
+        //password creation check
+        console.log(salt);
+        $scope.password = $scope.password + salt;
+        console.log($scope.password);
 
+        console.log($scope.password);
+        for(var i = 0; i < 235; i++){
+            $scope.password = $scope.hashIt($scope.password)
+        }
+        console.log($scope.password);
+
+        //Checks to see if username matches
         for (var customer in users.customers)
         {
-            /*if ($scope.username === customer.username)
+
+            if ($scope.username === users.customers[customer].username)
             {
-                console.log(customer.username);
-                break;
-            }*/
+
+                if($scope.password == users.customers[customer].password) {
+                    match = true;
+                    return alert("You are cleared to continue");
+                    //write the rest of the code for this.
+                }
+            }
         }
 
-        //$scope.username
-        //find username/email in database
-        //if not there, return "unknown user/pw combo
-        //
+        if (match === false){
+            return alert("There is no entry for this username/password combination")
+        }
+
+
+
+
     };
 
+
+    //set up database
     $scope.instantiateDatabase = function(){
         var salt = $scope.firebaseConnection.child('salt');
         salt.set({
@@ -66,17 +105,17 @@ app.controller('mainController', ['$scope', function($scope){
             customers: {
                 1 : {
                     username : 'thisName',
-                    password : '1234'
+                    password : 'f617080d10c534e61ee204689d38e475668a8ef56a1adb13d744b74fbf300484a05060b5d663da23301eeadf0ca5ba01f674f9b27d68785eb345208859a1ff88'
                 },
                 2 : {
                     username : 'thatName',
-                    password : '1234'
+                    password : 'f617080d10c534e61ee204689d38e475668a8ef56a1adb13d744b74fbf300484a05060b5d663da23301eeadf0ca5ba01f674f9b27d68785eb345208859a1ff88'
                 }
             },
             superUsers: {
                 1 : {
                     username : 'automaticity',
-                    password : 'password'
+                    password : '241333c206d2d2195446682598c897e03c6f8881cd042c207df370b6f9015b538f23693944ef3cf2352fc62cab06842ec38296fd239ecdac17766dcbed3c34ad'
                 }
             }
         });
