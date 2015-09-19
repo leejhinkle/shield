@@ -24,9 +24,19 @@
 
 
     <div id="main" class="stay-left">
-        <h1 id="site-title">SHIELD VOLLEYBALL CLUB</h1>
+
+
+        <h1 id="site-title">
+            <div>
+                <button class="btn btn-active menu-btn" ng-click="toggleMenu()">
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                </button>
+            </div>
+            <div class="center-me">SHIELD VOLLEYBALL CLUB</div>
+        </h1>
+
         <div id='black' >
-            <button class="btn btn-active" ng-click="toggleMenu()"><span class="glyphicon glyphicon-menu-hamburger"></span> </button>
+
 
         </div>
         <ng-view></ng-view>
@@ -50,8 +60,10 @@
     <div ng-if="fadeMe" class="my-menu from-left">
         <br/>
         <ul class="list-group">
-            <li class="list-group-item">User's Name</li>
-            <a href="#/login" ng-click="toggleMenu()"><li class="list-group-item">Log in / out</li></a>
+            <div ng-if="login">
+                <a href="#/my-info" ng-click="toggleMenu()"><li class="list-group-item">User's Name</li></a>
+            </div>
+            <a href="#/login" ng-click="toggleMenu()"><li class="list-group-item">{{ loginText }}</li></a>
             <hr/>
             <a href="#/" ng-click="toggleMenu()"><li class="list-group-item">Home</li></a>
             <a href="#/practice" ng-click="toggleMenu()"><li class="list-group-item">Practice</li></a>

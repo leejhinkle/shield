@@ -15,6 +15,26 @@ app.config(function($routeProvider){
             controller: 'mainController',
             templateUrl: 'js/views/login.html'
         })
+        .when('/my-info',{
+            controller: 'mainController',
+            templateUrl: 'js/views/my-info.html'
+        })
+        .when('/practice',{
+            controller: 'mainController',
+            templateUrl: 'js/views/practice.html'
+        })
+        .when('/season',{
+            controller: 'mainController',
+            templateUrl: 'js/views/season.html'
+        })
+        .when('/tryouts',{
+            controller: 'mainController',
+            templateUrl: 'js/views/tryouts.html'
+        })
+        .when('/coaches',{
+            controller: 'mainController',
+            templateUrl: 'js/views/coaches.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

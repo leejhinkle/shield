@@ -5,6 +5,8 @@ app.controller('mainController', ['$scope', function($scope){
     $scope.fadeMe = false;
     $scope.pushMe = true;
     $scope.showMe = false;
+    $scope.login = false;
+    $scope.loginText = "Login"
 
     /*$scope.toggle = function(){
         $scope.fadeMe = !$scope.fadeMe;

@@ -19,6 +19,7 @@ h1{
     font-family: ethnocentric;
     color: royalblue;
     font-size: 7vh;
+    display: inline;
 }
 
 hr{
@@ -31,10 +32,21 @@ img{
     width: 97vw;
 
 }
+h1{
+    width: 100vw;
+}
+h1 > div{
+    display: inline;
+}
+h1 > .center-me{
+    margin: 0 3vw 0 3vw;
+    text-align: center;
+}
 
 #rectangular {
     border-radius: 1vh;
 }
+
 
 .my-menu{
     color: royalblue;
@@ -51,6 +63,11 @@ img{
 .my-row{
     text-align: center;
 }
+/*
+.menu-btn{
+    margin-right: 20vw;
+}
+*/
 
 .jumbotron{
     background-color: royalblue;
@@ -60,7 +77,7 @@ img{
     padding: 0vh 0vh 0vh 0vh;
 }
 
-.jumbotron>p{
+.jumbotron > p{
     margin: 3vh 3vh 3vh 3vh;
 }
 
@@ -85,7 +102,7 @@ img{
 #black{
     background-color: #080808;
     margin: 0vh 3vh 0vh 3vh;
-    padding: 3vh 3vh 3vh 3vh;
+    padding: 1vh 1vh 1vh 1vh;
     border-radius: 1vh;
 }
 #site-title{
