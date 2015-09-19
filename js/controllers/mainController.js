@@ -79,7 +79,7 @@ app.controller('mainController', ['$scope', function($scope){
                 if($scope.password == users.customers[customer].password) {
                     match = true;
                     return alert("You are cleared to continue");
-                    //write the rest of the code for this.
+                    //TODO: write the rest of the code for this.
                 }
             }
         }
