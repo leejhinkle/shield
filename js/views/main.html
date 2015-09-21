@@ -1,3 +1,15 @@
 <div class="jumbotron">
-    <img id="rectangular" src="images/img1.JPG"/>
+    <div class="slider">
+        <div class="slide" ng-repeat="image in images" ng-show="image.visible">
+            <img ng-src="img/{{image.src}}" />
+        </div>
+        <div class="arrows">
+            <a href="#" ng-click="prev()">
+                <img src="../images/Left-arrow-right-hi.png" />
+            </a>
+            <!--<a href="#" ng-click="next()">
+                <img src="img/right-arrow.png" />
+            </a>-->
+        </div>
+    </div>
 </div>
