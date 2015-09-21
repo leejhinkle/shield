@@ -40,6 +40,10 @@ app.config(function($routeProvider){
             templateUrl: 'js/views/create-user.html'
 
         })
+        .when('/pricing',{
+            controller: 'mainController',
+            templateUrl: 'js/views/pricing.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
