@@ -49,14 +49,21 @@
 
         <footer class="panel-footer">
             <div class="container">
-                <ul ticker timing="7000" class="list-group">
-                    <li ng-repeat="item in myTickerItems" class="item-{{$index}} list-group-item">
-                        {{item.title}} - {{item.copy}}
-                    </li>
-                </ul>
+                <div class="col-md-3">
+                    <p>Practice schedule</p>
+                </div>
+                <div class="col-md-9">
+                    <ul ticker timing="5000" class="list-group">
+                        <li ng-repeat="item in myTickerItems" class="item-{{$index}} list-group-item">
+                            {{item.title}} - {{item.copy}}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </footer>
     </div>
+
+
 
     <div ng-if="fadeMe" class="my-menu from-left" ng-cloak>
         <br/>
@@ -74,6 +81,7 @@
             <a href="#/pricing" ng-click="toggleMenu()"><li class="list-group-item">Pricing</li></a>
         </ul>
     </div>
+
 
     <!--databeases-->
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>

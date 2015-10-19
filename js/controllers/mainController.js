@@ -9,6 +9,8 @@ app.controller('mainController', ['$scope', function($scope){
     $scope.loginText = "Login";
     $scope.username = '';
     $scope.password = '';
+    $scope.user = {};
+
     //Probably not the safest place to put this
     /*****/
     $scope.firebaseConnection = new Firebase('https://shield-db.firebaseio.com/');
@@ -54,7 +56,9 @@ app.controller('mainController', ['$scope', function($scope){
     };
 
 
-    //Loginuser function
+    /*
+    * Login user.  The
+    * */
     $scope.loginUser = function(){
 
         var match = false;
@@ -64,6 +68,10 @@ app.controller('mainController', ['$scope', function($scope){
         console.log($scope.password);
 
         console.log($scope.password);
+
+        /*
+        * This needs to be moved to another function for hashing a salted password
+        * */
         for(var i = 0; i < 235; i++){
             $scope.password = $scope.hashIt($scope.password)
         }
@@ -78,6 +86,9 @@ app.controller('mainController', ['$scope', function($scope){
 
                 if($scope.password == users.customers[customer].password) {
                     match = true;
+                    $scope.user = users.customers[customer];
+                    console.log($scope.user);
+
                     return alert("You are cleared to continue");
                     //TODO: write the rest of the code for this.
                 }
@@ -87,10 +98,6 @@ app.controller('mainController', ['$scope', function($scope){
         if (match === false){
             return alert("There is no entry for this username/password combination")
         }
-
-
-
-
     };
 
 
@@ -105,11 +112,84 @@ app.controller('mainController', ['$scope', function($scope){
             customers: {
                 1 : {
                     username : 'thisName',
-                    password : 'f617080d10c534e61ee204689d38e475668a8ef56a1adb13d744b74fbf300484a05060b5d663da23301eeadf0ca5ba01f674f9b27d68785eb345208859a1ff88'
+                    password : 'f617080d10c534e61ee204689d38e475668a8ef56a1adb13d744b74fbf300484a05060b5d663da23301eeadf0ca5ba01f674f9b27d68785eb345208859a1ff88',
+                    first_name : 'Quentin',
+                    last_name : 'Michaelsen',
+                    address : 'Van down by the river',
+                    city : 'Sandy',
+                    state : 'Utah',
+                    postal_code : '84070',
+                    players : {
+                        1 : {
+                            name: 'Annie',
+                            team: '16s',
+                            fee_total: '1400',
+                            payments : {
+                                1: {
+                                    date: '15 Sept 2015',
+                                    amount: '100.00'
+                                }
+                            }
+                        },
+                        2 : {
+                            name: 'Emma',
+                            team: '17s',
+                            fee_total: '1700',
+                            payments : {
+                                1: {
+                                    date: '15 Sept 2015',
+                                    amount: '100.00'
+                                }
+                            }
+
+                        }
+                    }
                 },
-                2 : {
+                2 : { //customer 2
                     username : 'thatName',
-                    password : 'f617080d10c534e61ee204689d38e475668a8ef56a1adb13d744b74fbf300484a05060b5d663da23301eeadf0ca5ba01f674f9b27d68785eb345208859a1ff88'
+                    password : 'f617080d10c534e61ee204689d38e475668a8ef56a1adb13d744b74fbf300484a05060b5d663da23301eeadf0ca5ba01f674f9b27d68785eb345208859a1ff88',
+                    first_name : 'Adam',
+                    last_name : 'Savage',
+                    address : '874 E 12100 S',
+                    city : 'Sandy',
+                    state : 'Utah',
+                    postal_code : '84070',
+                    players : {
+                        1: {
+                            name: 'Wendy',
+                            team: '16s',
+                            fee_total: '1400',
+                            payments: {
+                                1: {
+                                    date: '15 Sept 2015',
+                                    amount: '100.00'
+                                }
+                            }
+                        }
+                    }
+                },
+                3 : { //customer 3
+                    username : 'emailAddress',
+                    password : 'f617080d10c534e61ee204689d38e475668a8ef56a1adb13d744b74fbf300484a05060b5d663da23301eeadf0ca5ba01f674f9b27d68785eb345208859a1ff88',
+                    first_name : 'Wilson',
+                    last_name : 'Wilson',
+                    address : '1000 W 12000 S',
+                    city : 'Sandy',
+                    state : 'Utah',
+                    postal_code : '84070',
+                    players : {
+                        1: {
+                            name: 'Jenna',
+                            team: '16s',
+                            fee_total: '1400',
+                            payments: {
+                                1: {
+                                    date: '16 Sept 2015',
+                                    amount: '1000.00'
+                                }
+                            }
+                        }
+                    }
                 }
             },
             superUsers: {
@@ -122,34 +202,34 @@ app.controller('mainController', ['$scope', function($scope){
         console.log('The DB is probably instantiated');
     };
 
+
+    /*
+    * Practice times
+    * */
+
     $scope.myTickerItems = [
         {
-            title: 'item 1',
-            copy: 'amazing copy here'
+            title: '12s practice',
+            copy: 'M & W 6-8p'
         },
         {
-            title: 'item 2',
-            copy: 'wow, this is great'
+            title: '14s practice',
+            copy: 'M & W 6-8p'
         },
         {
-            title: 'item 3',
-            copy: 'hello angular'
+            title: '16s practice',
+            copy: 'T & Th 6-8p'
+        },
+        {
+            title: '17s practice',
+            copy: 'T & Th 6-8p'
         }
     ];
 
-    $scope.images = [{
-        src: '../images/img1.jpg',
-        title: 'Pic 1'
-    },{
-        src: '../images/img2.jpg',
-        title: 'Pic 2'
-    },{
-        src: '../images/img3.jpg',
-        title: 'Pic 3'
-    },{
-        src: '../images/img4.jpg',
-        title: 'Pic 4'
-    }]
+
+    /*
+    * SHA 512 Hash function
+    * */
 
     $scope.hashIt = /*
      *
@@ -433,27 +513,3 @@ app.controller('mainController', ['$scope', function($scope){
 
         };
 }]);
-/*
-app.animation('.colorful', [function() {
-    return {
-        addClass: function(element, className, doneFn) {
-            // do some cool animation and call the doneFn
-        },
-        removeClass: function(element, className, doneFn) {
-            // do some cool animation and call the doneFn
-        },
-        setClass: function(element, addedClass, removedClass, doneFn) {
-            // do some cool animation and call the doneFn
-        }
-    }
-}]);
-
-app.animation('.slide', [function() {
-    return {
-        enter: function(element, doneFn) {
-            jQuery(element).slideIn(1000, doneFn);
-        }
-    }
-}]);
-
-*/
